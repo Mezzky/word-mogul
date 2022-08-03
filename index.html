@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/index.css">
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="#home">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="navbar">
+            <nav class="left">
+                <li><a href="#">Recent Post</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">RSS</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Tour</a></li>
+                <li><a href="#">How To</a></li>
+                <li><a href="#">Login</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section id="home" class="main-page">
+        <div class="content">
+            <h2>Welcome to Wordmogul</h2>
+            <span>Write & Publish your Stuff on the Website</span>
+            <p>Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.</p>
+            <p>Write in Markdown, and get your website published in simple, neat and efficient way.</p>
+            <p>Simple blogs are supported now. Support for books and articles are coming.</p>
+            <p>Platform is easy to use. UI has no bells and whistles. After editing, you publish your content with a single button press. Hosting is built-in.
+            </p>
+            <div class="btn">
+                <a class="regis" href="#regist">Register</a>
+            </div>
+        </div>
+        <div id="regist" class="register">
+            <form action="/invalidpath" method="post" id="register_form">
+                <label for="register_username">Username</label>
+                <input type="text" name="username" id="register_username" placeholder="Username here..." required>
+                <span id="username_err_msg"></span>
+                <label for="register_email">Email</label>
+                <input type="email" name="email" id="register_email" placeholder="Email here..." required>
+                <span id="email_err_msg"></span>
+                <label for="logreg_password">Password</label>
+                <input type="password" name="password" id="logreg_password" placeholder="Password here..." required>
+                <label for="captcha"><span id="numberA"></span> + <span id="numberB"></span>= ?</label>
+                <input type="number" name="captcha" id="captcha" placeholder="Please put the Answear" required>
+                <span id="captcha_err_msg"></span>
+                <input type="submit" value="Register $3.00/Month" id="register_button">
+            </form>
+        </div>
+    </section>
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .navbar");
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+</html>
