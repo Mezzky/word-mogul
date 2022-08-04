@@ -204,6 +204,16 @@ header nav li a:hover{
 /*========= RESPONSIVE =========*/
 
 /* Laptop */
+@media screen and (max-width:1180px){
+    header .navbar .left{
+        margin: 0;
+    }
+
+    header .navbar .right{
+        margin-left: 350px;
+    }
+}
+
 @media screen and (max-width:1024px) {
     /* Header */
     header .navbar .left{
@@ -303,6 +313,10 @@ header nav li a:hover{
     
     .main-page .content span{
         color: var(--text-light);
+    }
+
+    .main-page .content p{
+        font-size: 15px;
     }
 
     .main-page .content .btn{
@@ -416,11 +430,11 @@ header nav li a:hover{
         padding-top: 120px;
         padding-left: 35px;
         padding-right: 35px;
-        gap: 150px;
+        gap: 200px;
     }
 
     .main-page .content{
-        height: 430px;
+        height: 500px;
     }
 
     .main-page .content h2{
@@ -432,7 +446,7 @@ header nav li a:hover{
     }
 
     .main-page .content p{
-        font-size: smaller;
+        font-size: 13px;
     }
 
     .main-page .register{
