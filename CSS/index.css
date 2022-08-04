@@ -346,6 +346,7 @@ header nav li a:hover{
 @media screen and (max-width:480px){
     /* Header */
     header .navbar{
+        top: 58px;
         height: 45vh;
     }
 
@@ -365,6 +366,10 @@ header nav li a:hover{
     /* Main Page */
     .main-page{
         gap: 100px;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .main-page .content{
@@ -380,6 +385,11 @@ header nav li a:hover{
 /* Mobile M */
 @media screen and (max-width:375px){
     /* Main Page */
+    .main-page{
+        padding-left: 35px;
+        padding-right: 35px;
+    }
+
     .main-page .content{
         height: 600px;
     }
