@@ -218,6 +218,7 @@ header nav li a:hover{
 
     /* Main Page */
     .main-page{
+        padding-top: 130px;
         margin: 0 80px;
         gap: 50px;
     }
@@ -243,7 +244,7 @@ header nav li a:hover{
         top: 65px;
         left: 0;
         width: 100%;
-        height: 40vh;
+        height: 60vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -289,7 +290,7 @@ header nav li a:hover{
     }
 
     .main-page .content{
-        height: 450px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -363,6 +364,14 @@ header nav li a:hover{
         font-size: 13px;
     }
 
+    header .menu-toggle{
+        margin-right: 20px;
+    }
+
+    header .navbar{
+        height: 60vh;
+    }
+
     /* Main Page */
     .main-page{
         gap: 100px;
@@ -373,25 +382,45 @@ header nav li a:hover{
     }
 
     .main-page .content{
-        height: 700px;
+        height: 400px;
+    }
+
+    .main-page .content h2{
+        font-size: 25px;
+    }
+
+    .main-page .content p{
+        font-size: 12px;
     }
 
     .main-page .content .btn a{
-        padding: 5px 12px;
+        padding: 5px 15px;
         font-size: 16px;
     }
 }
 
 /* Mobile M */
 @media screen and (max-width:375px){
+    /* Header */
+    header .menu-toggle{
+        margin-right: 20px;
+    }
+
+    header .navbar{
+        top: 58px;
+        height: 50vh;
+    }
+
     /* Main Page */
     .main-page{
+        padding-top: 120px;
         padding-left: 35px;
         padding-right: 35px;
+        gap: 150px;
     }
 
     .main-page .content{
-        height: 600px;
+        height: 430px;
     }
 
     .main-page .content h2{
@@ -406,6 +435,10 @@ header nav li a:hover{
         font-size: smaller;
     }
 
+    .main-page .register{
+        margin-bottom: 30px;
+    }
+
     .main-page .register form #register_button{
         font-size: 15px;
     }
@@ -413,8 +446,23 @@ header nav li a:hover{
 
 /* Mobile S */
 @media screen and (max-width:320px){
+    /* Header */
+    header .menu-toggle{
+        margin-right: 10px;
+    }
+
+    header .navbar{
+        top: 58px;
+        height: 60vh;
+    }
+
+    /* Main Page */
+    .main-page{
+        padding-top: 80px;
+    }
+
     .main-page .content{
-        height: 650px;
+        height: 400px;
     }
 
     .main-page .content h2{
@@ -426,12 +474,12 @@ header nav li a:hover{
     }
 
     .main-page .content p{
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .main-page .content .btn a{
-        padding: 5px 12px;
-        font-size: 13px;
+        padding: 6px 15px;
+        font-size: 15px;
     }
 
     .main-page .register form #register_button{
