@@ -64,17 +64,26 @@
         </div>
         <div id="regist" class="register">
             <form action="/invalidpath" method="post" id="register_form">
-                <label for="register_username">Username</label>
-                <input type="text" name="username" id="register_username" placeholder="Username here..." required>
+                <span>Create an Account</span>
+                <div class="name">
+                    <input type="text" name="" id="fName" placeholder="Firstname">
+                    <input type="text" name="" id="lName" placeholder="Lastname">
+                </div>
+                <span id="name_err_msg"></span>
+
+                <input type="text" name="username" id="register_username" placeholder="Username" required>
                 <span id="username_err_msg"></span>
-                <label for="register_email">Email</label>
-                <input type="email" name="email" id="register_email" placeholder="Email here..." required>
+
+                <input type="email" name="email" id="register_email" placeholder="Email" required>
                 <span id="email_err_msg"></span>
-                <label for="logreg_password">Password</label>
-                <input type="password" name="password" id="logreg_password" placeholder="Password here..." required>
+
+                <input type="password" name="password" id="logreg_password" placeholder="Password" required>
+                <span id="password_warning"></span>
+
                 <label for="captcha"><span id="numberA"></span> + <span id="numberB"></span>= ?</label>
                 <input type="number" name="captcha" id="captcha" placeholder="Please put the Answear" required>
                 <span id="captcha_err_msg"></span>
+
                 <input type="submit" value="Register $3.00/Month" id="register_button">
             </form>
         </div>
