@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/login.css">
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="index.html">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="navbar">
+            <nav class="left">
+                <li><a href="#">Recent Post</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">RSS</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Tour</a></li>
+                <li><a href="#">How To</a></li>
+                <li><a href="login.html">Login</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section class="main-page">
+        <h1>Sign In</h1>
+        <p>Already have an Account? <br> Sign In here</p>
+        <form method="post" action="/auth/login">
+            <input type="text" name="email" id="login_username" placeholder="Email here..."/>
+            <input type="password" name="password" id="logreg_password" placeholder="Password here..."/>
+            <input id="signIn_button" type="submit" value="Sign In"/>
+        </form>
+        <a href="/auth/recover">Reset Password</a>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .navbar");
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+</html>
