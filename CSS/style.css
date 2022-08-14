@@ -1,9 +1,12 @@
+/*========= FONT FAMILY =========*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
 /*========= CSS VARIABLE =========*/
 :root{
     --main-font: 'Poppins';
     --bg-color: #FFF;
+    --dark-color: #00095B;
     --main-color: #000F92;
+    --second-color: #404BA9;
     --text-color: #000;
     --text-light: #7A7A7A; 
 }
@@ -22,7 +25,6 @@ html{
 }
 
 body{
-    height: 100vh;
     background-color: var(--bg-color);
     overflow-x: hidden;
 }
@@ -63,7 +65,7 @@ ul,li{
     display: block;
     width: 30px;
     height: 4px;
-    background-color: #00095B;
+    background-color: var(--dark-color);
     border-radius: 3px;
     transition: all .5s;
 }
@@ -135,8 +137,85 @@ header nav li a:hover{
     text-decoration: underline;
 }
 
-/* Main Page */
+/* <<<<< Main/Front Page >>>>> */
 .main-page{
+    padding-top: 150px;
+    margin: 0 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.main-page .content{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-page .content h2{
+    color: var(--second-color);
+    font-size: 30px;
+}
+
+.main-page .content span{
+    color: var(--text-light);
+}
+
+.main-page .content .btn{
+    display: none;
+}
+
+.main-page .register{
+    padding: 0 100px;
+}
+
+.main-page .register form{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main-page .register form{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.main-page .register form .name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.main-page .register form .name #fName, #lName{
+    width: 49%;
+}
+
+.main-page .register form input{
+    border: 1px solid #000;
+    padding: 7px 10px;
+}
+
+.main-page .register form #register_button{
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    padding: 10px 0;
+    transition: 100ms;
+}
+.main-page .register form #register_button:hover{
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+/* <<<<< Login Page >>>>> */
+.login-page{
     padding-top: 150px;
     width: 50%;
     margin: auto;
@@ -145,34 +224,34 @@ header nav li a:hover{
     gap: 20px;
 }
 
-.main-page h1{
+.login-page h1{
     font-size: 50px;
     font-weight: 500;
     color: var(--main-color);
 }
 
-.main-page p{
+.login-page p{
     font-size: 15px;
     color: var(--text-light);
 }
 
-.main-page form{
+.login-page form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 140px;
 }
 
-.main-page form input{
+.login-page form input{
     height: 40px;
     padding: 10px 20px;
     border: 1px solid #000;
 }
 
-.main-page form #signIn_button{
+.login-page form #signIn_button{
     box-shadow: 2px 2px 2px rgba(0,0,0,.5);
     cursor: pointer;
-    background-color: #000F92;
+    background-color: var(--main-color);
     color: #fff;
     font-weight: 500;
     font-size: 18px;
@@ -180,23 +259,22 @@ header nav li a:hover{
     padding: 0;
     transition: 100ms;
 }
-.main-page form #signIn_button:hover{
+.login-page form #signIn_button:hover{
     transform: translateY(2px);
     box-shadow: none;
 }
 
-.main-page a{
+.login-page a{
     width: max-content;
-    border-bottom: 2px solid #7D8AFF;
-    color: #7D8AFF;
+    border-bottom: 2px solid var(--second-color);
+    color: var(--second-color);
     font-weight: 500;
     transition: 100ms linear;
 }
-.main-page a:hover{
+.login-page a:hover{
     border-bottom: 2px solid var(--main-color);
     color: var(--main-color);
 }
-
 
 /*========= RESPONSIVE =========*/
 
@@ -216,17 +294,27 @@ header nav li a:hover{
     header .navbar .left{
         margin-right: 0;
         margin-left: 30px;
-        width: 38%;
     }
 
     header .navbar .right{
         margin-right: 0;
-        margin-left: 200px;
-        width: 23%;
+        margin-left: 300px;
     }
 
     /* Main Page */
-    
+    .main-page{
+        padding-top: 130px;
+        margin: 0 80px;
+        gap: 50px;
+    }
+
+    .main-page .content{
+        height: 400px;
+    }
+
+    .main-page .register{
+        padding: 20px;
+    }
 }
 
 /* iPad and Tablet */
@@ -246,7 +334,7 @@ header nav li a:hover{
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        background-color:var(--main-color);
+        background-color: var(--main-color);
         transform: translateX(100%);
         transition: 500ms;
     }
@@ -284,6 +372,59 @@ header nav li a:hover{
 
     /* Main Page */
     .main-page{
+        padding-top: 120px;
+        grid-template-columns: 1fr;
+        gap: 150px;
+        margin-bottom: 100px;
+    }
+
+    .main-page .content{
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .main-page .content h2{
+        font-size: 30px;
+    }
+    
+    .main-page .content span{
+        color: var(--text-light);
+    }
+
+    .main-page .content p{
+        font-size: 15px;
+    }
+
+    .main-page .content .btn{
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-page .content .btn a{
+        padding: 5px 15px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+    }
+    
+    .main-page .content .btn .regis{
+        background-color: var(--main-color);
+    }
+    .main-page .content .btn .regis:hover{
+        background-color: #0d1eb4;
+        transition: 100ms linear;
+    }
+
+    .main-page .register{
+        padding: 0;
+    }
+
+    /* Login Page */
+    .login-page{
         width: 70%;
     }
 }
@@ -297,7 +438,12 @@ header nav li a:hover{
     }
 
     /* Main Page */
-    .main-page{
+    .main-page .content{
+        height: 650px;
+    }
+
+    /* Login Page */
+    .login-page{
         width: 80%;
     }
 }
@@ -318,7 +464,30 @@ header nav li a:hover{
     }
 
     /* Main Page */
-    
+    .main-page{
+        gap: 100px;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .main-page .content{
+        height: 400px;
+    }
+
+    .main-page .content h2{
+        font-size: 25px;
+    }
+
+    .main-page .content p{
+        font-size: 12px;
+    }
+
+    .main-page .content .btn a{
+        padding: 5px 15px;
+        font-size: 16px;
+    }
 }
 
 /* Mobile M */
@@ -334,7 +503,36 @@ header nav li a:hover{
     }
 
     /* Main Page */
-    
+    .main-page{
+        padding-top: 80px;
+        padding-left: 35px;
+        padding-right: 35px;
+        gap: 200px;
+    }
+
+    .main-page .content{
+        height: 500px;
+    }
+
+    .main-page .content h2{
+        font-size: 25px;
+    }
+
+    .main-page .content span{
+        font-size: 13px;
+    }
+
+    .main-page .content p{
+        font-size: 13px;
+    }
+
+    .main-page .register{
+        margin-bottom: 30px;
+    }
+
+    .main-page .register form #register_button{
+        font-size: 15px;
+    }
 }
 
 /* Mobile S */
@@ -350,5 +548,38 @@ header nav li a:hover{
     }
 
     /* Main Page */
-    
+    .main-page{
+        padding-top: 80px;
+    }
+
+    .main-page .content{
+        height: 400px;
+    }
+
+    .main-page .content h2{
+        font-size: 22px;
+    }
+
+    .main-page .content span{
+        font-size: 12px;
+    }
+
+    .main-page .content p{
+        font-size: 11px;
+    }
+
+    .main-page .content .btn a{
+        padding: 6px 15px;
+        font-size: 15px;
+    }
+
+    .main-page .register form #register_button{
+        font-size: 13px;
+    }
+
+    .main-page .register form label{
+        font-weight: 500;
+        font-size: 15px;
+    }
+
 }
