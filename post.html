@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+    <title>Wordmogul - write & publish your stuff on the web</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-100554810-1");
+    </script>
+    <meta name="description" content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content." />
+    <style>
+      @media (prefers-color-scheme: dark) {
+        .bg-near-black {
+          background-color: #eeeeee;
+        }
+        .bg-near-white {
+          background-color: #111111;
+        }
+        .black,
+        .black-60 {
+          color: #cccccc;
+        }
+        .dark-gray {
+          color: #cccccc;
+        }
+        p,
+        b,
+        h1,
+        h2,
+        strong,
+        label,
+        li {
+          color: #cccccc;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="sans-serif black-80 f6 ml4 mr4 mt3 b--light-silver bg-near-white">
+    <div class="pl0 pr2 pb4 w-100 db">
+      <nav class="">
+        <a class="link dim black b f6 f5-ns dib mr3" href="/" title="Wordmogul - Easy place to write and publish">Wordmogul</a>
+
+        <a class="b f6 f5-ns dib mr3" href="/posts/list" title="Posts">Posts</a>
+        <a class="b f6 f5-ns dib mr3 fr" href="/auth/logout" title="Logout">Logout</a>
+        <a class="b f6 f5-ns dib mr3 fr" href="/settings" title="Settings">Settings</a>
+        <a class="b f6 f5-ns dib mr3 fr" href="/account" title="Account">Account</a>
+      </nav>
+    </div>
+
+    <div class="">
+      <b>Posts</b>
+
+      <a href="/posts/create" class="ml3">+Create post</a>
+
+      <span class="fr"><a href="https://yusuf.wordmogul.org" target="_blank">Preview</a></span>
+    </div>
+
+    <hr />
+
+    <span style="background-color: #90ee90"> </span>
+    <span style="background-color: #ffb6c1"> </span>
+    <main class="mw8">
+      <article class="dt w-100 mb1 hover-bg-light-gray v-mid" href="#0">
+        <div class="dtc w2 w3-ns v-mid">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <g color="orange">
+              <circle r="25" cx="50" cy="50" stroke="currentcolor" fill="none" stroke-width="5" />
+            </g>
+          </svg>
+        </div>
+        <div class="dtc v-mid">
+          <span class="f6 f5-ns fw6 lh-title black mv0">
+            <a href="/posts/edit/27">This still pending</a>
+          </span>
+          <span class="ml2"> #draft </span>
+          <h2 class="f6 fw4 mt0 mb0 black-60" title="created: Mon, 11/Jul/2022 8:45pm">updated: Mon, 11/Jul/2022 8:45pm</h2>
+        </div>
+
+        <div class="dtc v-mid tr">
+          <a href="/posts/publish-confirm/27" class="f5">publish</a>
+        </div>
+      </article>
+
+      <article class="dt w-100 mb1 hover-bg-light-gray v-mid" href="#0">
+        <div class="dtc w2 w3-ns v-mid">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+            <g color="green">
+              <circle r="25" cx="50" cy="50" stroke="currentcolor" fill="none" stroke-width="5" />
+            </g>
+          </svg>
+        </div>
+        <div class="dtc v-mid">
+          <span class="f6 f5-ns fw6 lh-title black mv0">
+            <a href="/posts/edit/2">My Blog Moved Here</a>
+          </span>
+          <span class="ml2"> #published </span>
+          <h2 class="f6 fw4 mt0 mb0 black-60" title="created: Sat,  4/Jun/2022 7:38am">updated: Sat, 4/Jun/2022 7:51am</h2>
+        </div>
+
+        <div class="dtc v-mid tr">
+          <a href="/posts/unpublish-confirm/2" class="f5">unpublish</a>
+        </div>
+      </article>
+    </main>
+
+    <footer class="h4 light-gray f6 db tc"></footer>
+  </body>
+</html>
