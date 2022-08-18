@@ -9,11 +9,12 @@ Let's try to use minimal HTML5 / CSS3 and Javascript to make it look nice on mob
 
 Pages in priorities:
 
-1. Front-page
-2. Maybe enrollment page, if necessary (when user wants to join)
-3. Login page
-4. Editor page (for blog editing)
-5. Settings page
-6. Account page
-7. "Recents" page
-8. "Blog" theme
+1. Front-page :white_check_mark:
+2. Maybe enrollment page, if necessary (when user wants to join) :white_check_mark:
+3. Login page :white_check_mark:
+4. Post page 
+5. Editor page (for blog editing)
+6. Settings page
+7. Account page
+8. "Recents" page
+9. "Blog" theme
