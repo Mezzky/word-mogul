@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/1c6364f841.js" crossorigin="anonymous"></script>
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="#home">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="afterLogin-navbar">
+            <nav class="left">
+                <li><a href="#">Post</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section class="post-page">
+        <div class="heading">
+            <h2>Post</h2>
+            <a class="create-post" href="/posts/create">+ Create Post</a>
+            <a class="prev" href="https://wordmogul.com/yusuf" target="_blank">Preview</a>
+        </div>
+        <div class="post-list">
+            <div class="post">
+                <div class="info">
+                    <div class="circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width=50 height=50>
+                            <g color="orange">
+                                <circle r="25" cx="50" cy="50" stroke="currentcolor" fill="orange" stroke-width="5" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>This is still Pending <a href="/posts/edit/27">edit <i class="fa-solid fa-pencil"></i></a></h3>
+                        <span title="created: Mon, 11/Jul/2022 8:45pm">Updated:  Mon, 11/Jul/2022 8:45pm</span>
+                    </div>
+                </div>
+                <a id="btn" href="/posts/publish-confirm/27">Publish</a>
+            </div>
+            
+            <div class="post">
+                <div class="info">
+                    <div class="circle">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width=50 height=50>
+                            <g color="green">
+                                <circle r="25" cx="50" cy="50" stroke="currentcolor" fill="green" stroke-width="5" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="content">
+                        <h3>This is up to Date <a href="/posts/edit/27">edit <i class="fa-solid fa-pencil"></i></a></h3>
+                        <span title="created: Mon, 11/Jul/2022 8:45pm">Updated:  Mon, 11/Jul/2022 8:45pm</span>
+                    </div>
+                </div>
+                <a id="btn" style="background-color: #F9483D;" href="/posts/publish-confirm/27">Unpublish</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .afterLogin-navbar");
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+</html>
