@@ -1,7 +1,8 @@
 ### Wordmogul New Look
 
-The purpose of this project is to deliver adaptive site 
-From: https://www.wordmogul.com
+The purpose of this project is to deliver adaptive site :
+
+From: https://www.wordmogul.com <br>
 To: https://mezzky.github.io/word-mogul
 
 Let's try to use minimal HTML5 / CSS3 and Javascript to make it look nice on mobile, tablet and desktop.
