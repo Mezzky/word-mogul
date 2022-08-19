@@ -401,6 +401,7 @@ header .afterLogin-navbar .left li,
   color: var(--second-color);
   font-size: 40px;
 }
+
 .edit-post .title,
 .edit-post .slug {
   width: 500px;
@@ -408,11 +409,13 @@ header .afterLogin-navbar .left li,
   padding: 5px;
   margin-top: 10px;
 }
+
 .edit-post .main-title,
 .edit-post .main-slug {
   margin-top: 20px;
   font-size: 20px;
 }
+
 .edit-post .content {
   width: 500px;
   height: 400px;
@@ -420,6 +423,7 @@ header .afterLogin-navbar .left li,
   margin-top: 10px;
   resize: none;
 }
+
 .edit-post .main-content {
   margin-top: 20px;
   font-size: 20px;
@@ -437,25 +441,30 @@ header .afterLogin-navbar .left li,
 .edit-post .preview h2 {
   font-size: 36px;
 }
+
 .edit-post .preview p {
   margin-top: 50px;
 }
+
 .edit-post .prev-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .edit-post .prev-content {
   color: var(--second-color);
   text-decoration: underline;
   font-size: 20px;
   display: none;
 }
+
 .edit-post .edit-btn {
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
 }
+
 .edit-btn .submit,
 .edit-btn .cancel {
   padding: 10px 20px;
@@ -467,21 +476,26 @@ header .afterLogin-navbar .left li,
   transition: 300ms ease-in-out;
   box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.25);
 }
+
 .edit-btn .submit:hover {
   box-shadow: none;
 }
+
 .edit-btn .cancel:hover {
   box-shadow: none;
 }
+
 .edit-btn .cancel {
   margin-left: 10px;
 }
+
 .edit-btn .delete {
   color: var(--text-color);
   font-size: 30px;
 }
 
 /*========= RESPONSIVE =========*/
+
 /* Large Screen */
 @media screen and (max-width: 1200px) {
   /* Edit Post */
@@ -490,6 +504,7 @@ header .afterLogin-navbar .left li,
   .edit-post .content {
     width: 400px;
   }
+
   .edit-post .preview {
     width: 500px;
   }
@@ -513,15 +528,18 @@ header .afterLogin-navbar .left li,
   .edit-post {
     justify-content: center;
   }
+
   .edit-post .title,
   .edit-post .slug,
   .edit-post .content {
     width: 350px;
   }
+
   .edit-post .preview {
     width: 400px;
     padding: 30px;
   }
+
   .edit-post .preview h2 {
     font-size: 25px;
   }
@@ -690,6 +708,7 @@ header .afterLogin-navbar .left li,
     padding: 3px 10px;
     font-size: 15px;
   }
+
   /* Edit Post page*/
   .edit-post {
     flex-direction: column;
@@ -697,19 +716,23 @@ header .afterLogin-navbar .left li,
     align-items: center;
     padding: 100px 50px;
   }
+
   .edit-post .title,
   .edit-post .slug,
   .edit-post .content {
     width: 100%;
   }
+
   .edit-post .preview {
     margin-top: 50px;
     width: 100%;
     margin-top: 150px;
   }
+
   .edit-post .main-edit {
     width: 100%;
   }
+
   .edit-post .content {
     height: 200px;
   }
@@ -770,13 +793,16 @@ header .afterLogin-navbar .left li,
     padding: 2px 5px;
     font-size: 10px;
   }
+
   /* Edit post Page */
   .edit-post {
     padding: 80px 30px 0 30px;
   }
+
   .edit-post .text-header {
     font-size: 26px;
   }
+
   .edit-post .content {
     height: 200px;
   }
@@ -956,6 +982,7 @@ header .afterLogin-navbar .left li,
     padding: 5px 5px;
     font-size: 8px;
   }
+  
   /* Edit post Page */
   .edit-post .submit,
   .edit-post .cancel {

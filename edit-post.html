@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content." />
+    <meta name="description"
+        content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content." />
     <title>Wordmogul - Write & Publish your Stuff on the Web</title>
     <!-- CSS Style -->
     <link rel="stylesheet" href="CSS/style.css" />
@@ -13,125 +14,100 @@
     <!-- Data Layer Script -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-100554810-1");
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-100554810-1");
     </script>
-  </head>
-  <body>
+</head>
+<body>
     <!-- HEADER -->
     <header>
-      <a class="logo" href="#home">
-        <h1>Wordmogul</h1>
-      </a>
+        <a class="logo" href="#home">
+            <h1>Wordmogul</h1>
+        </a>
 
-      <div class="afterLogin-navbar">
-        <nav class="left">
-          <li><a href="#">Post</a></li>
-        </nav>
+        <div class="afterLogin-navbar">
+            <nav class="left">
+                <li><a href="#">Post</a></li>
+            </nav>
 
-        <nav class="right">
-          <li><a href="#">Account</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Logout</a></li>
-        </nav>
-      </div>
+            <nav class="right">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </nav>
+        </div>
 
-      <div class="menu-toggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <div class="menu-toggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <!-- MAIN PAGE -->
     <section class="edit-post">
-		<div class="main-edit">
+        <div class="main-edit">
             <div class="prev-text">
-			<h2 class="text-header">Edit Post</h2>
-            <a href="#text_output" class="prev-content">Preview</a>
-        </div>
+                <h2 class="text-header">Edit Post</h2>
+                <a href="#text_output" class="prev-content">Preview</a>
+            </div>
 
-			<form action="/posts/update" method="post">
-				<input type="hidden" name="post_id" value="2" />
-				<div class="main-title">
-					<label for="title" class="">Title :</label>
-					<br />
-					<input
-						type="text"
-						name="title"
-						placeholder="title"
-						autocomplete="off"
-						value="My Blog Moved Here"
-						class="title"
-						id="title"
-						required
-						/>
-				</div>
-				<div class="main-slug">
-					<label for="slug" class="">Slug :</label>
-					<br />
-					<input
-						type="text"
-						name="slug"
-						placeholder="slug"
-						autocomplete="off"
-						value="My-Blog-Moved-Here"
-						class="slug"
-						id="slug"
-						/>
-				</div>
-				<div class="main-content">
-					<label for="content" class="">Content : (Word count: 10<span id="word-count"></span>)</label>
-					<br />
-					<textarea
-						rows=40
-						cols=100
-						name="content"
-						placeholder="text..."
-						autocomplete="off"
-						class="content"
-						id="content_input"
-						/>This is my new blog.</textarea>
-				</div>
-				<div class="edit-btn">
+            <form action="/posts/update" method="post">
+                <input type="hidden" name="post_id" value="2">
+                <div class="main-title">
+                    <label for="title" class="">Title :</label>
+                    <br>
+                    <input type="text" name="title" placeholder="title" autocomplete="off" value="My Blog Moved Here"
+                        class="title" id="title" required>
+                </div>
+                <div class="main-slug">
+                    <label for="slug" class="">Slug :</label>
+                    <br>
+                    <input type="text" name="slug" placeholder="slug" autocomplete="off" value="My-Blog-Moved-Here"
+                        class="slug" id="slug">
+                </div>
+                <div class="main-content">
+                    <label for="content" class="">Content : (Word count:<span id="word-count">10</span>)</label>
+                    <br>
+                    <textarea rows=40 cols=100 name="content" placeholder="text..." autocomplete="off" class="content"
+                        id="content_input">This is my new blog.</textarea>
+                </div>
+                <div class="edit-btn">
                     <div class="submit-cancel">
-					<input
-						class="submit"
-						type="submit"
-						value="Update"
-                        style="background-color: #5ED734;"
-						/>
-					
-						<a class="cancel" style="background-color: #F9483D;" href="/">
-							Cancel
-						</a>
-                    </div>
-						<a class="delete" href="/posts/delete-confirm/2"><i class="fa-solid fa-trash-can"></i></a>
-					
-				</div>
-			</form>
+                        <input class="submit" type="submit" value="Update" style="background-color: #5ED734;" />
 
-		</div>
+                        <a class="cancel" style="background-color: #F9483D;" href="/">
+                            Cancel
+                        </a>
+                    </div>
+                    <a class="delete" href="/posts/delete-confirm/2"><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            </form>
+        </div>
 
         <div class="main-preview">
-		<div class="preview" id="text_output">
-            <h2>This is Tittle</h2>
-            <p>Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content. Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content. </p>
+            <div class="preview" id="text_output">
+                <h2>This is Tittle</h2>
+                <p>Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free
+                    environment, where you can focus on what's most important-writing great content. Wordmogul is a
+                    platform for writers, bloggers and content makers. It provides a distraction free environment, where
+                    you can focus on what's most important-writing great content. </p>
+            </div>
         </div>
-    </div>
     </section>
     <script>
-      const menuToggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("header .afterLogin-navbar");
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .afterLogin-navbar");
 
-      menuToggle.addEventListener("click", function () {
-        nav.classList.toggle("slide");
-      });
+        menuToggle.addEventListener("click", function () {
+            nav.classList.toggle("slide");
+        });
     </script>
-  </body>
+</body>
+
 </html>
