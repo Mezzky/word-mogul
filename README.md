@@ -14,7 +14,7 @@ Pages in priorities:
 3. Login page :white_check_mark:
 4. Post page :white_check_mark:
 5. Editor page (for blog editing) :white_check_mark:
-6. Settings page
+6. Settings page :white_check_mark:
 7. Account page
 8. "Recents" page
 9. "Blog" theme
