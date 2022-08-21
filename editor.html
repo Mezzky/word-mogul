@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/1c6364f841.js" crossorigin="anonymous"></script>
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="#home">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="afterLogin-navbar">
+            <nav class="left">
+                <li><a href="#">Post</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section class="editor-page">
+        <div class="input-container">
+            <div class="tittle">
+                <h1>Edit Post</h1>
+                <a href="#preview">Preview</a>
+            </div>
+
+            <form action="/posts/update" method="post">
+                <div class="input-box">
+                    <label for="title">Title :</label>
+                    <input type="text" name="title" autocomplete="off" required>
+                </div>
+                <div class="input-box">
+                    <label for="slug">Slug :</label>
+                    <input type="text" name="slug" autocomplete="off" required>
+                </div>
+                <div class="input-box">
+                    <label for="content">Content: (Word count: <span id="word-count"></span>)</label>
+                    <textarea rows="7" name="content" autocomplete="off" id="content_input"></textarea>
+                </div>
+                <div class="btn">
+                    <div class="request">
+                        <input type="submit" value="Update">
+                        <input type="reset" value="Cancel">
+                    </div>
+                    <a href="/posts/delete-confirm/48"><i class="fa-solid fa-trash-can"></i></a>
+                </div>
+            </form>
+        </div>
+
+        <div class="preview-box" id="preview">
+            <h2>Tittle Here</h2>
+            <p>Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content. Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content. </p>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/commonmark@0.29.3/dist/commonmark.js"></script>
+    <script>
+        // Navbar
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .afterLogin-navbar");
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+
+        // Common Mark
+        console.log("hello");
+        var reader = new commonmark.Parser();
+        var writer = new commonmark.HtmlRenderer();
+        var contentInputEl = document.getElementById("content_input");
+        function regen() {
+            console.log("key pressed", event);
+            let titleInputEl = document.getElementById("title");
+            let content = "# " + titleInputEl.value + "\n\n" + contentInputEl.value;
+            console.log("> ", content);
+            let parsed = reader.parse(content);
+            console.log("parsed: ", parsed);
+            let result = writer.render(parsed);
+            console.log("result: ", result);
+            const textOutputEl = document.getElementById("text_output");
+            if (textOutputEl.innerHTML != null) {
+                textOutputEl.innerHTML = result;
+            }
+        }
+
+        let titleEl = document.getElementById("title");
+        titleEl.addEventListener('keyup', (event) => {
+            const slugEl = document.getElementById("slug");
+            const val = event.target.value.replaceAll(' ', '-').replace(/[^a-zA-Z0-9-]/g, '');
+            slugEl.value = val;
+            regen();
+        });
+
+        contentInputEl.addEventListener('keyup', (event) => {
+            regen();
+        });
+
+        regen();
+
+        wordCount();
+        document.getElementById("content_input").addEventListener("keyup", wordCount)
+
+        function wordCount() {
+            let text = document.getElementById("content_input").value;
+            if (text.length == 0) {
+                document.getElementById("word-count").innerText = 0;
+            } else {
+                let wordCount = text.trim().split(" ").length;
+                document.getElementById("word-count").innerText = wordCount;
+            }
+        }
+    </script>
+</body>
+</html>
