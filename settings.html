@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="#home">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="afterLogin-navbar">
+            <nav class="left">
+                <li><a href="#">Post</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section class="settings-page">
+        <div class="tittle">
+            <h1>Settings</h1>
+            <a href="_blank">Preview</a>
+        </div>
+
+        <form action="/settings/update" method="post">
+            <input type="hidden" name="user_id" value="0">
+            <div class="input-box">
+                <label for="base_url">Base-Url :</label>
+                <input type="text" name="base_url" autocomplete="off">
+            </div>
+            <div class="input-box">
+                <label for="language_code">Language Code :</label>
+                <input type="text" name="language_code" autocomplete="off">
+            </div>
+            <div class="input-box">
+                <label for="tittle">Tittle :</label>
+                <input type="text" name="tittle" autocomplete="off">
+            </div>
+            <div class="input-box">
+                <label for="theme">Theme :</label>
+                <select name="theme">
+                    <option value="danluu">danluu</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <label for="site_description">Site Description :</label>
+                <textarea name="site_description" maxlength="300" placeholder="Max (300) Words"></textarea>
+            </div>
+            <div class="input-box">
+                <label for="header">Header :</label>
+                <textarea name="header"></textarea>
+            </div>
+            <div class="input-box">
+                <label for="footer">Footer :</label>
+                <textarea name="footer"></textarea>
+            </div>
+            <div class="btn">
+                <div class="request">
+                    <input type="submit" value="Update">
+                    <input type="reset" value="Cancel">
+                </div>
+                <a href="#">Export Blog to Zip Format</a>
+            </div>
+        </form>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .afterLogin-navbar");
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+</html>
