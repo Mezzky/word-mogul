@@ -1,992 +1,1036 @@
 /*========= FONT FAMILY =========*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 /*========= CSS VARIABLE =========*/
-:root {
-  --main-font: "Poppins";
-  --bg-color: #fff;
-  --dark-color: #00095b;
-  --main-color: #000f92;
-  --second-color: #404ba9;
-  --text-color: #000;
-  --text-light: #7a7a7a;
+:root{
+    --main-font: 'Poppins';
+    --bg-color: #FFF;
+    --dark-color: #00095B;
+    --main-color: #000F92;
+    --second-color: #404BA9;
+    --text-color: #000;
+    --text-light: #7A7A7A; 
 }
+
 
 /*========= CSS RESET =========*/
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: var(--main-font);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--main-font);
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+    scroll-behavior: smooth;
 }
 
-body {
-  background-color: var(--bg-color);
-  overflow-x: hidden;
+body{
+    background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
-a {
-  text-decoration: none;
+a{
+    text-decoration: none;
 }
 
-ul,
-li {
-  list-style: none;
+ul,li{
+    list-style: none;
 }
 
 /*========= MAIN STYLE =========*/
 
 /* Menu Bars */
-.menu-toggle {
-  position: relative;
-  margin-right: 40px;
-  height: 20px;
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
+.menu-toggle{
+    position: relative;
+    margin-right: 40px;
+    height: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.menu-toggle input {
-  position: absolute;
-  top: -6px;
-  left: -9px;
-  width: 40px;
-  height: 28px;
-  opacity: 0;
-  cursor: pointer;
-  z-index: 2;
+.menu-toggle input{
+    position: absolute;
+    top: -6px;
+    left: -9px;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
 }
 
-.menu-toggle span {
-  display: block;
-  width: 30px;
-  height: 2px;
-  background-color: var(--dark-color);
-  border-radius: 3px;
-  transition: all 0.5s;
+.menu-toggle span{
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--dark-color);
+    border-radius: 3px;
+    transition: all .5s;
 }
 
-.menu-toggle input:checked ~ span:nth-child(2) {
-  transform-origin: 0 0;
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform-origin: 0 0;
 }
 
-.menu-toggle input:checked ~ span:nth-child(4) {
-  transform-origin: 0 100%;
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform-origin: 0 100%;
 }
 
-.menu-toggle input:checked ~ span:nth-child(2) {
-  transform: rotate(45deg) translate(-1px, -1px);
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, -1px);
 }
 
-.menu-toggle input:checked ~ span:nth-child(3) {
-  transform: scale(0);
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
 }
 
-.menu-toggle input:checked ~ span:nth-child(4) {
-  transform: rotate(-45deg) translate(-2px, 1px);
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-2px, 1px);
 }
 
 /* Header */
-header {
-  background-color: var(--bg-color);
-  width: 100%;
-  position: fixed;
-  z-index: 100;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header{
+    background-color: var(--bg-color);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .logo {
-  color: var(--main-color);
-  font-size: 15px;
-  margin-left: 20px;
+header .logo{
+    color: var(--main-color);
+    font-size: 15px;
+    margin-left: 20px;
 }
 
-header .navbar {
-  margin-right: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
+header .navbar{
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
 }
 
-header .navbar nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header .navbar nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .navbar .left li,
-.right li {
-  margin-left: 20px;
+header .navbar .left li, .right li{
+    margin-left: 20px;
 }
 
-header nav li a {
-  font-weight: 500;
-  color: var(--main-color);
-  transition: 100ms;
+header nav li a{
+    font-weight: 500;
+    color: var(--main-color);
+    transition: 100ms;
 }
-header nav li a:hover {
-  text-decoration: underline;
+header nav li a:hover{
+    text-decoration: underline;
 }
 
 /* ===== After Login Navbar ===== */
-header .afterLogin-navbar {
-  margin-right: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
+header .afterLogin-navbar{
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
 }
 
-header .afterLogin-navbar {
-  display: flex;
-  align-items: center;
-  width: 80%;
+header .afterLogin-navbar{
+    display: flex;
+    align-items: center;
+    width: 80%;
 }
 
-header .afterLogin-navbar nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+header .afterLogin-navbar nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .afterLogin-navbar .left li,
-.right li {
-  margin-left: 20px;
+header .afterLogin-navbar .left li, .right li{
+    margin-left: 20px;
 }
 
 /* <<<<< Main/Front Page >>>>> */
-.main-page {
-  padding-top: 150px;
-  margin: 0 100px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.main-page{
+    padding-top: 150px;
+    margin: 0 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-.main-page .content {
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.main-page .content{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.main-page .content h2 {
-  color: var(--second-color);
-  font-size: 30px;
+.main-page .content h2{
+    color: var(--second-color);
+    font-size: 30px;
 }
 
-.main-page .content span {
-  color: var(--text-light);
+.main-page .content span{
+    color: var(--text-light);
 }
 
-.main-page .content .btn {
-  display: none;
+.main-page .content .btn{
+    display: none;
 }
 
-.main-page .register {
-  padding: 0 100px;
+.main-page .register{
+    padding: 0 100px;
 }
 
-.main-page .register form {
-  width: 100%;
-  height: 350px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.main-page .register form{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.main-page .register form {
-  font-weight: bold;
-  font-size: 16px;
+.main-page .register form{
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.main-page .register form .name {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.main-page .register form .name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.main-page .register form .name #fName,
-#lName {
-  width: 49%;
+.main-page .register form .name #fName, #lName{
+    width: 49%;
 }
 
-.main-page .register form input {
-  border: 1px solid #000;
-  padding: 7px 10px;
+.main-page .register form input{
+    border: 1px solid #000;
+    padding: 7px 10px;
 }
 
-.main-page .register form #register_button {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  background-color: var(--main-color);
-  color: #fff;
-  font-weight: 500;
-  font-size: 18px;
-  border: none;
-  padding: 10px 0;
-  transition: 100ms;
+.main-page .register form #register_button{
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    padding: 10px 0;
+    transition: 100ms;
 }
-.main-page .register form #register_button:hover {
-  transform: translateY(2px);
-  box-shadow: none;
+.main-page .register form #register_button:hover{
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
 /* <<<<< Login Page >>>>> */
-.login-page {
-  padding-top: 150px;
-  width: 50%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+.login-page{
+    padding-top: 150px;
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
-.login-page h1 {
-  font-size: 50px;
-  font-weight: 500;
-  color: var(--main-color);
+.login-page h1{
+    font-size: 50px;
+    font-weight: 500;
+    color: var(--main-color);
 }
 
-.login-page p {
-  font-size: 15px;
-  color: var(--text-light);
+.login-page p{
+    font-size: 15px;
+    color: var(--text-light);
 }
 
-.login-page form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 140px;
+.login-page form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
 }
 
-.login-page form input {
-  height: 40px;
-  padding: 10px 20px;
-  border: 1px solid #000;
+.login-page form input{
+    height: 40px;
+    padding: 10px 20px;
+    border: 1px solid #000;
 }
 
-.login-page form #signIn_button {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  background-color: var(--main-color);
-  color: #fff;
-  font-weight: 500;
-  font-size: 18px;
-  border: none;
-  padding: 0;
-  transition: 100ms;
+.login-page form #signIn_button{
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    padding: 0;
+    transition: 100ms;
 }
-.login-page form #signIn_button:hover {
-  transform: translateY(2px);
-  box-shadow: none;
+.login-page form #signIn_button:hover{
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
-.login-page a {
-  width: max-content;
-  border-bottom: 2px solid var(--second-color);
-  color: var(--second-color);
-  font-weight: 500;
-  transition: 100ms linear;
+.login-page a{
+    width: max-content;
+    border-bottom: 2px solid var(--second-color);
+    color: var(--second-color);
+    font-weight: 500;
+    transition: 100ms linear;
 }
-.login-page a:hover {
-  border-bottom: 2px solid var(--main-color);
-  color: var(--main-color);
+.login-page a:hover{
+    border-bottom: 2px solid var(--main-color);
+    color: var(--main-color);
 }
 
 /* <<<<< Post Page >>>>> */
-.post-page {
-  padding-top: 100px;
-  width: 90%;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+.post-page{
+    padding-top: 100px;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
-.post-page .heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.post-page .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.post-page .heading h2 {
-  font-size: 30px;
-  color: var(--second-color);
+.post-page .heading h2{
+    font-size: 30px;
+    color: var(--second-color);
 }
 
-.post-page .heading a {
-  font-size: 20px;
-  font-weight: 500px;
+.post-page .heading a{
+    font-size: 20px;
+    font-weight: 500px;
 }
 
-.post-page .heading .create-post {
-  color: rgb(0, 151, 33);
-  font-weight: bold;
+.post-page .heading .create-post{
+    color: rgb(0, 151, 33);
+    font-weight: bold;
 }
-.post-page .heading .create-post:hover {
-  text-decoration: underline;
-}
-
-.post-page .heading .prev {
-  color: var(--main-color);
-}
-.post-page .heading .prev:hover {
-  text-decoration: underline;
+.post-page .heading .create-post:hover{
+    text-decoration: underline;
 }
 
-.post-page .post-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
+.post-page .heading .prev{
+    color: var(--main-color);
+}
+.post-page .heading .prev:hover{
+    text-decoration: underline;
 }
 
-.post-page .post-list .post {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.post-page .post-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
 }
 
-.post-page .post-list .post .info {
-  display: flex;
-  align-items: center;
+.post-page .post-list .post{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.post-page .post-list .post .content {
-  display: flex;
-  flex-direction: column;
+.post-page .post-list .post .info{
+    display: flex;
+    align-items: center;
 }
 
-.post-page .post-list .post .content h3 a {
-  font-size: 15px;
-  margin-left: 10px;
-  color: var(--second-color);
-}
-.post-page .post-list .post .content h3 a:hover {
-  color: var(--main-color);
-  text-decoration: underline;
+.post-page .post-list .post .content{
+    display: flex;
+    flex-direction: column;
 }
 
-.post-page .post-list .post #btn {
-  background-color: #5ed734;
-  padding: 5px 20px;
-  border-radius: 5px;
-  color: #fff;
-  transition: 100ms linear;
+.post-page .post-list .post .content h3 a{
+    font-size: 15px;
+    margin-left: 10px;
+    color: var(--second-color);
 }
-.post-page .post-list .post #btn:hover {
-  transform: translateY(2px);
-  box-shadow: none;
+.post-page .post-list .post .content h3 a:hover{
+    color: var(--main-color);
+    text-decoration: underline;
 }
 
-/* <<<<< Edit Post Page >>>>> */
-.edit-post {
-  width: 100%;
-  display: flex;
-  padding-top: 130px;
-  margin-bottom: 100px;
-  justify-content: space-evenly;
-  gap: 50px;
+.post-page .post-list .post #btn{
+    background-color: #5ED734;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: #fff;
+    transition: 100ms linear;
+}
+.post-page .post-list .post #btn:hover{
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
-.edit-post .text-header {
-  color: var(--second-color);
-  font-size: 40px;
+/* <<<<< Editor Page >>>>> */
+.editor-page{
+    padding-top: 100px;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
 }
 
-.edit-post .title,
-.edit-post .slug {
-  width: 500px;
-  height: 30px;
-  padding: 5px;
-  margin-top: 10px;
+.editor-page .input-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.edit-post .main-title,
-.edit-post .main-slug {
-  margin-top: 20px;
-  font-size: 20px;
+.editor-page .input-container .tittle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.edit-post .content {
-  width: 500px;
-  height: 400px;
-  padding: 5px;
-  margin-top: 10px;
-  resize: none;
+.editor-page .input-container .tittle h1{
+    color: var(--second-color);
+    font-size: 30px;
 }
 
-.edit-post .main-content {
-  margin-top: 20px;
-  font-size: 20px;
+.editor-page .input-container .tittle a{
+    display: none;
+    font-size: 18px;
+    color: var(--dark-color);
+    font-weight: 500;
+    text-decoration: underline;
+    transition: 100ms ease-in-out;
 }
 
-.edit-post .preview {
-  width: 600px;
-  height: 100%;
-  padding: 50px;
-  border: 2px solid var(--second-color);
-  color: var(--text-color);
-  border-radius: 5px;
+.editor-page .input-container .tittle a:hover{
+    color: var(--second-color);
+    text-decoration: none;
 }
 
-.edit-post .preview h2 {
-  font-size: 36px;
+.editor-page .input-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.edit-post .preview p {
-  margin-top: 50px;
+.editor-page .input-container form .input-box{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.edit-post .prev-text {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.editor-page .input-container form .input-box label{
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-light);
 }
 
-.edit-post .prev-content {
-  color: var(--second-color);
-  text-decoration: underline;
-  font-size: 20px;
-  display: none;
+.editor-page .input-container form .input-box input, textarea{
+    border: 1px solid #000;
+    padding: 2px 5px;
 }
 
-.edit-post .edit-btn {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
+.editor-page .input-container form .input-box textarea{
+    resize: none;
 }
 
-.edit-btn .submit,
-.edit-btn .cancel {
-  padding: 10px 20px;
-  border: none;
-  color: var(--bg-color);
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 300ms ease-in-out;
-  box-shadow: 0px 5px 2px rgba(0, 0, 0, 0.25);
+.editor-page .input-container form .btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.edit-btn .submit:hover {
-  box-shadow: none;
+.editor-page .input-container form .btn .request input{
+    cursor: pointer;
+    padding: 5px 10px;
+    color: var(--bg-color);
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0px 5px 2px -2px rgba(0,0,0,.5);
+    background-color: #5ED734;
+    transition: 100ms ease-in;
+}
+.editor-page .input-container form .btn .request input[type = reset]{
+    background-color: #F9483D;
+}
+.editor-page .input-container form .btn .request input:hover{
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
-.edit-btn .cancel:hover {
-  box-shadow: none;
+.editor-page .input-container form .btn a i{
+    font-size: 30px;
 }
 
-.edit-btn .cancel {
-  margin-left: 10px;
+.editor-page .input-container form .btn a{
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: 100ms ease-out;
+}
+.editor-page .input-container form .btn a:hover{
+    color: var(--second-color);
 }
 
-.edit-btn .delete {
-  color: var(--text-color);
-  font-size: 30px;
+.editor-page .preview-box{
+    padding: 30px;
+    border: 2px solid var(--second-color);
+    border-radius: 5px;
+}
+
+.editor-page .preview-box h2{
+    margin-bottom: 30px;
+}
+
+/* <<<<< Settings Page >>>>> */
+.settings-page{
+    padding-top: 80px;
+    width: 60%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.settings-page .tittle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.settings-page .tittle h1{
+    color: var(--second-color);
+}
+
+.settings-page .tittle a{
+    font-size: 18px;
+    color: var(--dark-color);
+    font-weight: 500;
+    text-decoration: underline;
+    transition: 100ms ease-in-out;
+}
+
+.settings-page .tittle a:hover{
+    color: var(--second-color);
+    text-decoration: none;
+}
+
+.settings-page form{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-page form .input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.settings-page form .btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.settings-page form .input-box label{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.settings-page form .input-box input, select, textarea{
+    border: 1px solid #000;
+    padding: 2px 5px;
+}
+
+.settings-page form .input-box textarea{
+    resize: none;
+}
+
+.settings-page form .btn .request input{
+    cursor: pointer;
+    padding: 5px 10px;
+    color: var(--bg-color);
+    font-weight: 500;
+    font-size: 15px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0px 5px 2px -2px rgba(0,0,0,.5);
+    background-color: #5ED734;
+    transition: 100ms ease-in;
+}
+.settings-page form .btn .request input[type = reset]{
+    background-color: #F9483D;
+}
+.settings-page form .btn .request input:hover{
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.settings-page form .btn a{
+    font-weight: 600;
+    color: var(--dark-color);
+    transition: 100ms ease-out;
+}
+.settings-page form .btn a:hover{
+    color: var(--second-color);
 }
 
 /*========= RESPONSIVE =========*/
 
-/* Large Screen */
-@media screen and (max-width: 1200px) {
-  /* Edit Post */
-  .edit-post .title,
-  .edit-post .slug,
-  .edit-post .content {
-    width: 400px;
-  }
-
-  .edit-post .preview {
-    width: 500px;
-  }
-}
 /* Laptop */
-@media screen and (max-width: 1080px) {
-  .main-page {
-    padding-top: 130px;
-    margin: 0 80px;
-    gap: 50px;
-  }
+@media screen and (max-width:1080px) {
+    .main-page{
+        padding-top: 130px;
+        margin: 0 80px;
+        gap: 50px;
+    }
 
-  .main-page .content {
-    height: 400px;
-  }
+    .main-page .content{
+        height: 400px;
+    }
 
-  .main-page .register {
-    padding: 20px;
-  }
-  /* Edit Post */
-  .edit-post {
-    justify-content: center;
-  }
-
-  .edit-post .title,
-  .edit-post .slug,
-  .edit-post .content {
-    width: 350px;
-  }
-
-  .edit-post .preview {
-    width: 400px;
-    padding: 30px;
-  }
-
-  .edit-post .preview h2 {
-    font-size: 25px;
-  }
+    .main-page .register{
+        padding: 20px;
+    }
 }
 
 /* iPad and Tablet */
-@media screen and (max-width: 820px) {
-  /* Header */
-  .menu-toggle {
-    display: flex;
-  }
+@media screen and (max-width:820px) {
+    /* Header */
+    .menu-toggle{
+        display: flex;
+    }
 
-  header .navbar {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: var(--main-color);
-    transform: translateX(100%);
-    transition: 500ms;
-  }
+    header .navbar{
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: var(--main-color);
+        transform: translateX(100%);
+        transition: 500ms;
+    }
 
-  header .navbar nav li a {
-    color: #fff;
-  }
+    header .navbar nav li a{
+        color: #fff;
+    }
 
-  header .navbar.slide {
-    transform: translateX(0);
-    transition: 500ms;
-  }
+    header .navbar.slide{
+        transform: translateX(0);
+        transition: 500ms;
+    }
 
-  header .navbar .left {
-    margin: 0;
-    margin-left: 30px;
-    margin-top: 30px;
-    display: flex;
-    height: 150px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
-  }
+    header .navbar .left{
+        margin: 0;
+        margin-left: 30px;
+        margin-top: 30px;
+        display: flex;
+        height: 150px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
 
-  header .navbar .right {
-    margin: 0;
-    margin-left: 30px;
-    display: flex;
-    height: 100px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+    header .navbar .right{
+        margin: 0;
+        margin-left: 30px;
+        display: flex;
+        height: 100px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-  /* NAVBAR AFTER LOGIN */
-  header .afterLogin-navbar {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    width: 100%;
-    height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: var(--main-color);
-    transform: translateX(100%);
-    transition: 500ms;
-  }
+    /* NAVBAR AFTER LOGIN */
+    header .afterLogin-navbar{
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: var(--main-color);
+        transform: translateX(100%);
+        transition: 500ms;
+    }
 
-  header .afterLogin-navbar nav li a {
-    color: #fff;
-  }
+    header .afterLogin-navbar nav li a{
+        color: #fff;
+    }
 
-  header .afterLogin-navbar.slide {
-    transform: translateX(0);
-    transition: 500ms;
-  }
+    header .afterLogin-navbar.slide{
+        transform: translateX(0);
+        transition: 500ms;
+    }
 
-  header .afterLogin-navbar .left {
-    margin: 0;
-    margin-left: 20px;
-    margin-top: 30px;
-    display: flex;
-    height: 150px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+    header .afterLogin-navbar .left{
+        margin: 0;
+        margin-left: 20px;
+        margin-top: 30px;
+        display: flex;
+        height: 150px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-  header .afterLogin-navbar .right {
-    margin: 0;
-    margin-top: -110px;
-    margin-left: 20px;
-    display: flex;
-    height: 100px;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+    header .afterLogin-navbar .right{
+        margin: 0;
+        margin-top: -110px;
+        margin-left: 20px;
+        display: flex;
+        height: 100px;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 
-  /* Main Page */
-  .main-page {
-    padding-top: 120px;
-    grid-template-columns: 1fr;
-    gap: 150px;
-    margin-bottom: 100px;
-  }
+    /* Main Page */
+    .main-page{
+        padding-top: 120px;
+        grid-template-columns: 1fr;
+        gap: 150px;
+        margin-bottom: 100px;
+    }
 
-  .main-page .content {
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+    .main-page .content{
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .main-page .content h2{
+        font-size: 30px;
+    }
+    
+    .main-page .content span{
+        color: var(--text-light);
+    }
 
-  .main-page .content h2 {
-    font-size: 30px;
-  }
+    .main-page .content p{
+        font-size: 15px;
+    }
 
-  .main-page .content span {
-    color: var(--text-light);
-  }
+    .main-page .content .btn{
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-  .main-page .content p {
-    font-size: 15px;
-  }
+    .main-page .content .btn a{
+        padding: 5px 15px;
+        font-size: 20px;
+        font-weight: 500;
+        color: #fff;
+    }
+    
+    .main-page .content .btn .regis{
+        background-color: var(--main-color);
+    }
+    .main-page .content .btn .regis:hover{
+        background-color: #0d1eb4;
+        transition: 100ms linear;
+    }
 
-  .main-page .content .btn {
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    .main-page .register{
+        padding: 0;
+    }
 
-  .main-page .content .btn a {
-    padding: 5px 15px;
-    font-size: 20px;
-    font-weight: 500;
-    color: #fff;
-  }
+    /* Login Page */
+    .login-page{
+        width: 70%;
+    }
 
-  .main-page .content .btn .regis {
-    background-color: var(--main-color);
-  }
-  .main-page .content .btn .regis:hover {
-    background-color: #0d1eb4;
-    transition: 100ms linear;
-  }
+    /* Post Page */
+    .post-page .post-list .post #btn{
+        padding: 3px 10px;
+        font-size: 15px;
+    }
 
-  .main-page .register {
-    padding: 0;
-  }
-
-  /* Login Page */
-  .login-page {
-    width: 70%;
-  }
-
-  /* Post Page */
-  .post-page .post-list .post #btn {
-    padding: 3px 10px;
-    font-size: 15px;
-  }
-
-  /* Edit Post page*/
-  .edit-post {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 50px;
-  }
-
-  .edit-post .title,
-  .edit-post .slug,
-  .edit-post .content {
-    width: 100%;
-  }
-
-  .edit-post .preview {
-    margin-top: 50px;
-    width: 100%;
-    margin-top: 150px;
-  }
-
-  .edit-post .main-edit {
-    width: 100%;
-  }
-
-  .edit-post .content {
-    height: 200px;
-  }
-}
-
-/* Surface Duo */
-@media screen and (max-width: 540px) {
-  .edit-post .prev-content {
-    display: inherit;
-  }
+    /* Settings Page */
+    .settings-page{
+        width: 80%;
+    }
 }
 
 /* Mobile */
-@media screen and (max-width: 480px) {
-  /* Header */
-  header .navbar {
-    top: 58px;
-    height: 60vh;
-  }
+@media screen and (max-width:480px){
+    /* Header */
+    header .navbar{
+        top: 58px;
+        height: 60vh;
+    }
 
-  header .afterLogin-navbar {
-    top: 58px;
-    height: 60vh;
-  }
+    header .afterLogin-navbar{
+        top: 58px;
+        height: 60vh;
+    }
 
-  /* Main Page */
-  .main-page .content {
-    height: 650px;
-  }
+    /* Main Page */
+    .main-page .content{
+        height: 650px;
+    }
 
-  /* Login Page */
-  .login-page {
-    width: 80%;
-  }
+    /* Login Page */
+    .login-page{
+        width: 80%;
+    }
 
-  /* Post Page */
-  .post-page .heading h2 {
-    font-size: 20px;
-  }
+    /* Post Page */
+    .post-page .heading h2{
+        font-size: 20px;
+    }
+    
+    .post-page .heading a{
+        font-size: 15px;
+    }
 
-  .post-page .heading a {
-    font-size: 15px;
-  }
+    .post-page .post-list .post .content h3{
+        font-size: 15px;
+    }
+    
+    .post-page .post-list .post .content h3 a{
+        font-size: 12px;
+    }
 
-  .post-page .post-list .post .content h3 {
-    font-size: 15px;
-  }
+    .post-page .post-list .post .content span{
+        font-size: 12px;
+    }
 
-  .post-page .post-list .post .content h3 a {
-    font-size: 12px;
-  }
+    .post-page .post-list .post #btn{
+        padding: 2px 5px;
+        font-size: 10px;
+    }
 
-  .post-page .post-list .post .content span {
-    font-size: 12px;
-  }
+    /* Settings Page */
+    .settings-page form .btn a{
+        font-size: 12px;
+    }
 
-  .post-page .post-list .post #btn {
-    padding: 2px 5px;
-    font-size: 10px;
-  }
+    .settings-page form .btn .request{
+        display: flex;
+        gap: 5px;
+    }
 
-  /* Edit post Page */
-  .edit-post {
-    padding: 80px 30px 0 30px;
-  }
-
-  .edit-post .text-header {
-    font-size: 26px;
-  }
-
-  .edit-post .content {
-    height: 200px;
-  }
+    .settings-page form .btn .request input{
+        font-size: 10px;
+    }
 }
 
 /* Mobile L */
-@media screen and (max-width: 425px) {
-  /* Header */
-  header .logo {
-    font-size: 13px;
-  }
+@media screen and (max-width:425px){
+    /* Header */
+    header .logo{
+        font-size: 13px;
+    }
 
-  header .menu-toggle {
-    margin-right: 20px;
-  }
+    header .menu-toggle{
+        margin-right: 20px;
+    }
 
-  header .navbar {
-    height: 60vh;
-  }
+    header .navbar{
+        height: 60vh;
+    }
 
-  header .afterLogin-navbar {
-    height: 60vh;
-  }
+    header .afterLogin-navbar{
+        height: 60vh;
+    }
 
-  /* Main Page */
-  .main-page {
-    gap: 100px;
-    width: 100%;
-    margin-left: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+    /* Main Page */
+    .main-page{
+        gap: 100px;
+        width: 100%;
+        margin-left: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 
-  .main-page .content {
-    height: 400px;
-  }
+    .main-page .content{
+        height: 400px;
+    }
 
-  .main-page .content h2 {
-    font-size: 25px;
-  }
+    .main-page .content h2{
+        font-size: 25px;
+    }
 
-  .main-page .content p {
-    font-size: 12px;
-  }
+    .main-page .content p{
+        font-size: 12px;
+    }
 
-  .main-page .content .btn a {
-    padding: 5px 15px;
-    font-size: 16px;
-  }
-  /* Edit post page */
+    .main-page .content .btn a{
+        padding: 5px 15px;
+        font-size: 16px;
+    }
 }
 
 /* Mobile M */
-@media screen and (max-width: 375px) {
-  /* Header */
-  header .menu-toggle {
-    margin-right: 20px;
-  }
+@media screen and (max-width:375px){
+    /* Header */
+    header .menu-toggle{
+        margin-right: 20px;
+    }
 
-  header .navbar {
-    top: 58px;
-    height: 60vh;
-  }
+    header .navbar{
+        top: 58px;
+        height: 60vh;
+    }
 
-  header .afterLogin-navbar {
-    top: 58px;
-    height: 60vh;
-  }
+    header .afterLogin-navbar{
+        top: 58px;
+        height: 60vh;
+    }
 
-  /* Main Page */
-  .main-page {
-    padding-top: 80px;
-    padding-left: 35px;
-    padding-right: 35px;
-    gap: 200px;
-  }
+    /* Main Page */
+    .main-page{
+        padding-top: 80px;
+        padding-left: 35px;
+        padding-right: 35px;
+        gap: 200px;
+    }
 
-  .main-page .content {
-    height: 500px;
-  }
+    .main-page .content{
+        height: 500px;
+    }
 
-  .main-page .content h2 {
-    font-size: 25px;
-  }
+    .main-page .content h2{
+        font-size: 25px;
+    }
 
-  .main-page .content span {
-    font-size: 13px;
-  }
+    .main-page .content span{
+        font-size: 13px;
+    }
 
-  .main-page .content p {
-    font-size: 13px;
-  }
+    .main-page .content p{
+        font-size: 13px;
+    }
 
-  .main-page .register {
-    margin-bottom: 30px;
-  }
+    .main-page .register{
+        margin-bottom: 30px;
+    }
 
-  .main-page .register form #register_button {
-    font-size: 15px;
-  }
+    .main-page .register form #register_button{
+        font-size: 15px;
+    }
 }
 
 /* Mobile S */
-@media screen and (max-width: 320px) {
-  /* Header */
-  header .menu-toggle {
-    margin-right: 10px;
-  }
+@media screen and (max-width:320px){
+    /* Header */
+    header .menu-toggle{
+        margin-right: 10px;
+    }
 
-  header .navbar {
-    top: 58px;
-    height: 80vh;
-  }
+    header .navbar{
+        top: 58px;
+        height: 80vh;
+    }
 
-  header .afterLogin-navbar {
-    top: 58px;
-    height: 80vh;
-  }
+    header .afterLogin-navbar{
+        top: 58px;
+        height: 80vh;
+    }
 
-  /* Main Page */
-  .main-page {
-    padding-top: 80px;
-  }
+    /* Main Page */
+    .main-page{
+        padding-top: 80px;
+    }
 
-  .main-page .content {
-    height: 400px;
-  }
+    .main-page .content{
+        height: 400px;
+    }
 
-  .main-page .content h2 {
-    font-size: 22px;
-  }
+    .main-page .content h2{
+        font-size: 22px;
+    }
 
-  .main-page .content span {
-    font-size: 12px;
-  }
+    .main-page .content span{
+        font-size: 12px;
+    }
 
-  .main-page .content p {
-    font-size: 11px;
-  }
+    .main-page .content p{
+        font-size: 11px;
+    }
 
-  .main-page .content .btn a {
-    padding: 6px 15px;
-    font-size: 15px;
-  }
+    .main-page .content .btn a{
+        padding: 6px 15px;
+        font-size: 15px;
+    }
 
-  .main-page .register form #register_button {
-    font-size: 13px;
-  }
+    .main-page .register form #register_button{
+        font-size: 13px;
+    }
 
-  .main-page .register form label {
-    font-weight: 500;
-    font-size: 15px;
-  }
+    .main-page .register form label{
+        font-weight: 500;
+        font-size: 15px;
+    }
 
-  /* Post Page */
-  .post-page .heading h2 {
-    font-size: 15px;
-  }
+    /* Post Page */
+    .post-page .heading h2{
+        font-size: 15px;
+    }
+    
+    .post-page .heading a{
+        font-size: 12px;
+    }
 
-  .post-page .heading a {
-    font-size: 12px;
-  }
+    .post-page .post-list .post .content h3{
+        font-size: 12px;
+    }
+    
+    .post-page .post-list .post .content h3 a{
+        font-size: 10px;
+    }
 
-  .post-page .post-list .post .content h3 {
-    font-size: 12px;
-  }
+    .post-page .post-list .post .content span{
+        font-size: 10px;
+    }
 
-  .post-page .post-list .post .content h3 a {
-    font-size: 10px;
-  }
+    .post-page .post-list .post #btn{
+        padding: 5px 5px;
+        font-size: 8px;
+    }
 
-  .post-page .post-list .post .content span {
-    font-size: 10px;
-  }
+    /* Settings Page */
+    .settings-page form .btn .request input{
+        padding: 5px 5px;
+    }
 
-  .post-page .post-list .post #btn {
-    padding: 5px 5px;
-    font-size: 8px;
-  }
-  
-  /* Edit post Page */
-  .edit-post .submit,
-  .edit-post .cancel {
-    padding: 10px 15px;
-    font-size: 16px;
-  }
+    .settings-page form .btn a{
+        font-size: 11px;
+    }
+
 }
