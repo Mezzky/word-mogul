@@ -780,6 +780,15 @@ header .afterLogin-navbar .left li, .right li{
         font-size: 15px;
     }
 
+    /* Editor Page */
+    .editor-page{
+        grid-template-columns: 1fr;
+    }
+
+    .editor-page .input-container .tittle a{
+        display: inherit;
+    }
+
     /* Settings Page */
     .settings-page{
         width: 80%;
@@ -833,6 +842,12 @@ header .afterLogin-navbar .left li, .right li{
     .post-page .post-list .post #btn{
         padding: 2px 5px;
         font-size: 10px;
+    }
+
+    /* Editor Page */
+    .editor-page{
+        padding-top: 70px;
+        width: 80%;
     }
 
     /* Settings Page */
@@ -1022,6 +1037,19 @@ header .afterLogin-navbar .left li, .right li{
     .post-page .post-list .post #btn{
         padding: 5px 5px;
         font-size: 8px;
+    }
+
+    /* Editor Page */
+    .editor-page{
+        gap: 100px;
+    }
+    
+    .editor-page .input-container{
+        gap: 20px;
+    }
+
+    .editor-page .input-container form{
+        gap: 10px;
     }
 
     /* Settings Page */
