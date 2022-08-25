@@ -1070,3 +1070,9 @@ header .afterLogin-navbar .left li, .right li{
     }
 
 }
+
+@media screen and (max-width:300px){
+    input{
+        font-size: 12px;
+    }
+}
