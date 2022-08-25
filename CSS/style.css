@@ -38,6 +38,14 @@ ul,li{
     list-style: none;
 }
 
+input{
+    font-size: 16px;
+}
+
+input:focus{
+    outline: none;
+}
+
 /*========= MAIN STYLE =========*/
 
 /* Menu Bars */
