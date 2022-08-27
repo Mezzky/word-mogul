@@ -700,6 +700,45 @@ header .afterLogin-navbar .left li, .right li{
     background-color: var(--second-color);
 }
 
+/* <<<<< Settings Page >>>>> */
+.recent-page{
+    padding-top: 150px;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.recent-page .tittle{
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-page .tittle h1{
+    color: var(--second-color);
+    font-size: 30px;
+}
+
+.recent-page .tittle p{
+    color: var(--text-light);
+    font-weight: 500;
+
+}
+
+.recent-page ol{
+    padding-left: 50px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.recent-page ol li{
+    list-style: inherit;
+    font-size: 18px;
+    font-weight: 500;
+}
+
 /*========= RESPONSIVE =========*/
 
 /* Laptop */
@@ -903,6 +942,11 @@ header .afterLogin-navbar .left li, .right li{
         padding-bottom: 80px;
         gap: 80px;
     }
+
+    /* Recent Page */
+    .recent-page{
+        padding-top: 100px;
+    }
 }
 
 /* Mobile */
@@ -972,6 +1016,15 @@ header .afterLogin-navbar .left li, .right li{
 
     .settings-page form .btn .request input{
         font-size: 10px;
+    }
+
+    /* Recent Page */
+    .recent-page ol{
+        padding-left: 20px;
+    }
+
+    .recent-page ol li{
+        font-size: 15px;
     }
 }
 
@@ -1068,6 +1121,15 @@ header .afterLogin-navbar .left li, .right li{
 
     .main-page .register form #register_button{
         font-size: 15px;
+    }
+
+    /* Recent Page */
+    .recent-page ol{
+        padding-left: 10px;
+    }
+
+    .recent-page ol li{
+        font-size: 14px;
     }
 }
 
@@ -1169,6 +1231,12 @@ header .afterLogin-navbar .left li, .right li{
 
     .settings-page form .btn a{
         font-size: 11px;
+    }
+
+    /* Recent Page */
+    .recent-page ol{
+        gap: 10px;
+        padding-left: 0;
     }
 
     /* Fix Input Zoom */

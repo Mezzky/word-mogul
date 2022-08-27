@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description"
+        content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="index.html">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="navbar">
+            <nav class="left">
+                <li><a href="#">Recent Post</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">RSS</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Tour</a></li>
+                <li><a href="#">How To</a></li>
+                <li><a href="login.html">Login</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section class="recent-page">
+        <div class="tittle">
+            <h1>Recent Post</h1>
+            <p>Recently post with Wordmogul :</p>
+        </div>
+        <ol>
+            <li>
+                <a href="#">This is Post Tittle</a>
+                (2022-Jun-04) by
+                <a href="#">User</a>
+            </li>
+            <li>
+                <a href="#">This is Post Tittle</a>
+                (2022-Jun-04) by
+                <a href="#">User</a>
+            </li>
+            <li>
+                <a href="#">This is Post Tittle</a>
+                (2022-Jun-04) by
+                <a href="#">User</a>
+            </li>
+            <li>
+                <a href="#">This is Post Tittle</a>
+                (2022-Jun-04) by
+                <a href="#">User</a>
+            </li>
+        </ol>
+    </section>
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .navbar");
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+</html>
