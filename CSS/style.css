@@ -605,6 +605,101 @@ header .afterLogin-navbar .left li, .right li{
     color: var(--second-color);
 }
 
+/* <<<<< Settings Page >>>>> */
+.account-page{
+    padding-top: 100px;
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.account-page .tittle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.account-page .tittle h1{
+    color: var(--second-color);
+}
+
+.account-page .account, 
+.account-page .payment, 
+.account-page .change-pass{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.account-page .account .data{
+    display: flex;
+    flex-direction: column;
+}
+
+.account-page .account .data label{
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.account-page .account .data p{
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.account-page .account .btn{
+    display: block;
+}
+
+.account-page .account .btn a{
+    background-color: #F9483D;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: var(--bg-color);
+    transition: 100ms ease-in;
+}
+.account-page .account .btn a:hover{
+    background-color: #fd6358;
+}
+
+.account-page .payment form, .change-pass form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.account-page .payment .input-box, .change-pass .input-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.account-page .payment .input-box label, .change-pass .input-box label{
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.account-page .payment .btn button, .change-pass .btn button{
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: var(--bg-color);
+    font-size: 16px;
+    background-color: #5ED734;
+    transition: 100ms ease-in;
+}
+.account-page .change-pass .btn button{
+    background-color: var(--main-color);
+}
+.account-page .payment .btn button:hover{
+    background-color: #68ff36;
+}
+.account-page .change-pass .btn button:hover{
+    background-color: var(--second-color);
+}
+
 /*========= RESPONSIVE =========*/
 
 /* Laptop */
@@ -800,6 +895,13 @@ header .afterLogin-navbar .left li, .right li{
     /* Settings Page */
     .settings-page{
         width: 80%;
+    }
+
+    /* Account Page */
+    .account-page{
+        grid-template-columns: 1fr;
+        padding-bottom: 80px;
+        gap: 80px;
     }
 }
 

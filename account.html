@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Font Awesome Link -->
+    <script src="https://kit.fontawesome.com/1c6364f841.js" crossorigin="anonymous"></script>
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="#home">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="afterLogin-navbar">
+            <nav class="left">
+                <li><a href="#">Post</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section class="account-page">
+        <div class="account">
+            <div class="tittle">
+                <h1>Account</h1>
+            </div>
+            <div class="data">
+                <label for="name">Name:</label>
+                <p>John Doe Braham</p>
+            </div>
+            <div class="data">
+                <label for="card">Card:</label>
+                <p>2424 2424 2424 (0 / 0) -</p>
+            </div>
+            <div class="data">
+                <label for="subscription">Subscription:</label>
+                <p>Subscribed</p>
+            </div>
+            <div class="data">
+                <label for="next-billing-date">Next Billing Date:</label>
+                <p>Sat, 05 Aug 2023 01:39:33 PDT</p>
+            </div>
+            <div class="btn">
+                <a href="/account/cancel-subscription-confirm"><i class="fa-regular fa-face-frown"></i> Cancel Subscription</a>
+            </div>
+        </div>
+        
+        <div class="payment">
+            <div class="tittle">
+                <h1>Update Payment Method</h1>
+            </div>
+            <form id="subscribe-form">
+                <div class="input-box">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" name="full-name" id="name" required>
+                </div>
+                <div class="input-box">
+                    <label for="cc">Credit Card Number:</label>
+                    <input type="text" name="cc" id="card-number">
+                </div>
+                <div class="input-box">
+                    <label for="exp">Expiry Date MM/YY:</label>
+                    <input type="text" name="exp" id="card-expiry">
+                </div>
+                <div class="input-box">
+                    <label for="cvc">CVC:</label>
+                    <input type="text" name="cvc" id="card-cvc">
+                </div>
+                <div class="input-box">
+                    <label for="zip">ZIP:</label>
+                    <input type="text" name="postal_code" id="postal_code">
+                </div>
+                <div class="btn">
+                    <button type="submit" id="submitBtn"><i class="fa-regular fa-face-grin-wide"></i> Update</button>
+                </div>
+                <div id="messages"></div>
+            </form>
+        </div>
+        
+        <div class="change-pass">
+            <div class="tittle">
+                <h1>Change Password</h1>
+            </div>
+            <form action="/account/password" method="post">
+                <div class="input-box">
+                    <label for="old-password">Old Password:</label>
+                    <input type="password" name="old_password" required>
+                </div>
+                <div class="input-box">
+                    <label for="new-password">New Password:</label>
+                    <input type="password" name="new_password" required>
+                </div>
+                <div class="btn">
+                    <button type="submit" id="submitBtn">Change</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Navbar
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .afterLogin-navbar");
+
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+
+        // JS Stripe
+        const setMessage = (message) => {
+            const messageDiv = document.querySelector('#messages');
+            messageDiv.innerHTML = "<p>" + message + "</p>";
+        }
+
+        function redirect() {
+            window.location.href = '/posts/list';
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            let stripe, cardNumber, cardExpiry, cardCvc, priceId, subscriptionId, clientSecret;
+            await fetch('/stripe/config')
+                .then((resp) => resp.json())
+                .then((resp) => {
+                    stripe = Stripe(resp.publishableKey);
+                    const elements = stripe.elements();
+                    cardNumber = elements.create('cardNumber');
+                    cardNumber.mount('#card-number');
+                    cardExpiry = elements.create('cardExpiry');
+                    cardExpiry.mount('#card-expiry');
+                    cardCvc = elements.create('cardCvc');
+                    cardCvc.mount('#card-cvc');
+                    if (!resp.prices) {
+                        setMessage("No prices found!")
+                    }
+
+                    resp.prices.forEach((price) => {
+                        priceId = price.id
+                    });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+            fetch('/stripe/create-customer', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                })
+                .then((response) => response.json())
+                .then((data) => {
+
+                    clientSecret = data.client_secret;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+            const form = document.querySelector('#subscribe-form');
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = true;
+                const nameInput = document.getElementById('name');
+                const postalCode = document.getElementById('postal_code');
+
+                stripe.confirmCardSetup(clientSecret, {
+                    payment_method: {
+                        card: cardNumber,
+                        billing_details: {
+                            name: nameInput.value,
+                            address: {
+                                postal_code: postalCode.value,
+                            }
+                        },
+                    }
+                }).then((result) => {
+                    if (result.error) {
+                        submitBtn.disabled = false;
+                        setMessage(`Payment failed: ${result.error.message}`);
+                    } else {
+                        submitBtn.disabled = true;
+
+                        fetch('/stripe/create-subscription', {
+                                method: 'POST',
+                                body: JSON.stringify({
+                                    price_id: priceId,
+                                }),
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                            })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                if (data.subscriptionId != "") {
+                                    setMessage(
+                                        'You have successfully subscribed! Redirecting...'
+                                        )
+                                    setTimeout(redirect, 5000);
+                                } else {
+
+                                    setMessage('Payment updated successfully.')
+                                }
+                            })
+                            .catch((error) => {
+                                console.error('Error:', error);
+                            });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
