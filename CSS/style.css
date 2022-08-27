@@ -1069,9 +1069,7 @@ header .afterLogin-navbar .left li, .right li{
         font-size: 11px;
     }
 
-}
-
-@media screen and (max-width:300px){
+    /* Fix Input Zoom */
     input{
         font-size: 12px;
     }
