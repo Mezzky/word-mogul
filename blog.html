@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Wordmogul is a platform for writers, bloggers and content makers. It provides a distraction free environment, where you can focus on what's most important-writing great content.">
+    <title>Wordmogul - Write & Publish your Stuff on the Web</title>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Data Layer Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100554810-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-100554810-1');
+    </script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a class="logo" href="#home">
+            <h1>Wordmogul</h1>
+        </a>
+
+        <div class="navbar">
+            <nav class="left">
+                <li><a href="#">Recent Post</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">RSS</a></li>
+                <li><a href="#">Sitemap</a></li>
+            </nav>
+            
+            <nav class="right">
+                <li><a href="#">Tour</a></li>
+                <li><a href="#">How To</a></li>
+                <li><a href="login.html">Login</a></li>
+            </nav>
+        </div>
+
+        <div class="menu-toggle">
+            <input type="checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- MAIN PAGE -->
+    <section class="blog-page">
+        <h1>Welcome to Wordmogul's Blog</h1>
+        <article>This is our little corner of Wordmogul community! We talk about new features, exciting announcements, plans and desires :-) Join our community and request features, as well as complain about bugs and problems.</article>
+        <h2>Recent News</h2>
+        <ul>
+            <li>[Q3/2022] We're testing everything before launch and fixing <span>SEO</span></li>
+        </ul>
+        <div class="news-list">
+            <p>July 2022 <a href="#">Starting a Blog</a></p>
+            <p>July 2022 <a href="#">Wordmogul financial goals</a></p>
+            <p>July 2022 <a href="#">Feature: Markdown editing with preview</a></p>
+            <p>July 2022 <a href="#">Feature: blog export to ZIP</a></p>
+            <p>June 2022 <a href="#">Welcome to Wordmogul</a></p>
+        </div>
+        <footer>Copyright 2022 Wordmogul</footer>
+    </section>
+    
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("header .navbar");
+        
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+</html>

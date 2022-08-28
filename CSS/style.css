@@ -700,7 +700,7 @@ header .afterLogin-navbar .left li, .right li{
     background-color: var(--second-color);
 }
 
-/* <<<<< Settings Page >>>>> */
+/* <<<<< Recent Page >>>>> */
 .recent-page{
     padding-top: 150px;
     width: 80%;
@@ -737,6 +737,44 @@ header .afterLogin-navbar .left li, .right li{
     list-style: inherit;
     font-size: 18px;
     font-weight: 500;
+}
+
+/* <<<<< Recent Page >>>>> */
+.blog-page{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    gap: 10px;
+}
+
+.blog-page h1, h2{
+    color: var(--second-color); 
+}
+
+.blog-page article{
+    color: var(--text-light);
+}
+
+.blog-page h2{
+    font-size: 20px;
+}
+
+.blog-page ul li{
+    font-weight: 500;
+}
+
+.blog-page ul li span{
+    color: #F9483D;
+}
+
+.blog-page .news-list{
+    padding-left: 30px;
+}
+
+.blog-page footer{
+    font-weight: 600;
 }
 
 /*========= RESPONSIVE =========*/
@@ -947,6 +985,14 @@ header .afterLogin-navbar .left li, .right li{
     .recent-page{
         padding-top: 100px;
     }
+
+    /* Blog Page */
+    .blog-page{
+        gap: 15px;
+    }
+    .blog-page .news-list{
+        padding: 0;
+    }
 }
 
 /* Mobile */
@@ -1025,6 +1071,10 @@ header .afterLogin-navbar .left li, .right li{
 
     .recent-page ol li{
         font-size: 15px;
+    }
+
+    .blog-page{
+        width: 85%;
     }
 }
 
