@@ -17,4 +17,4 @@ Pages in priorities:
 6. Settings page :white_check_mark:
 7. Account page :white_check_mark:
 8. "Recents" page :white_check_mark:
-9. "Blog" theme
+9. "Blog" theme :white_check_mark:
